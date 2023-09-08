@@ -1,0 +1,27 @@
+domains
+	labor, nacion, nombre, tipo = symbol
+facts-profesiones
+	profesion(nombre,labor)
+facts-nacionalidad
+	pais(nombre,nacion)
+predicates
+	nondeterm trabajo(nombre)
+
+clauses
+	trabajo(P):-
+		profesion(P,carpintero),
+		pais(P,colombia),
+		write("En Colombia es mal pagada la carpinteria");
+		
+		profesion(P, carpintero),
+		pais(P,usa),
+		write("En USA es bien pagada la carpinteria").
+	
+	profesion(carlos,carpintero).
+	profesion(roger,carpintero).
+	pais(carlos,colombia).
+	pais(roger,usa).
+	
+goal
+	trabajo(PERSONA).
+	
